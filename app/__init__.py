@@ -8,7 +8,7 @@ app = Flask(__name__)
 def startup():
     global nlp
     import spacy
-    nlp = spacy.load('es')
+    nlp = spacy.load('es_core_news_md')
 
 @app.route("/")
 def main():
