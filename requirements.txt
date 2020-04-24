@@ -1,3 +1,4 @@
+gunicorn
 Flask==0.12.2
 spacy>=2.2.0,<3.0.0
 https://github.com/explosion/spacy-models/releases/download/es_core_news_md-2.2.0/es_core_news_md-2.2.0.tar.gz#egg=es_core_news_md==2.2.0
