@@ -10,10 +10,16 @@ def startup():
     import spacy
     nlp = spacy.load('es_core_news_sm')
 
+# pages
 @app.route("/")
 def main():
     return render_template('index.html')
 
+@app.route("/acerca")
+def acerca():
+    return render_template('acerca.html')
+
+# api calls
 @app.route("/api/nlp/")
 def lematiza():
     sent = request.args.get('s')
