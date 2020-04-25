@@ -1,1 +1,35 @@
-hola heroku!
+
+{% extends "base.html" %}
+{% block content %}
+<!-- content -->
+<div class="container content">
+    <div class="jumbotron">
+        <h1 class="display-3">Escribe algo:</h1>
+        <form action="?">
+            <div class="form-group">
+                <input class="form-control form-control-lg" id="sentJ" name="s" aria-describedby="sentHelp" placeholder="">
+                <span id="sentHelp" class="form-text text-muted">(cualquier enunciado en español)</span>
+            </div>
+            <p class="lead">
+                <button class="btn btn-primary btn-lg btn-info" type="submit">Analizar</button>
+            </p>
+        </form>
+    </div>
+    <div class="text-center">
+        <img id="lemmatizerGif" class="loading mb-5" src="//cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif" loop="infinite" />
+    </div>
+    <table class="table" id="lemmatizerTable">
+        <thead>
+            <tr>
+                <th></th>
+                <th class="table-primary">Lema</th>
+                <th class="table-success">Categoría</th>
+                <th class="table-warning">Metadata</th>
+                <th class="table-danger">Dependencia</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<script type="application/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+{% endblock %}

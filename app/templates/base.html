@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lematizador</title>
+        <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootswatch/4.4.1/sketchy/bootstrap.min.css">
+        <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+    <!-- navigation bar -->
+    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <div class="container">
+            <a href="/" class="navbar-brand">Lematizador v0.8</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav navbar-left">
+                    <form id="searchbar" class="form-inline my-2 my-lg-0" action="?">
+                        <input id="sentB" name="s" class="form-control mr-1" type="text" placeholder="">
+                        <button class="btn btn-info my-2 my-sm-0" type="submit">Analizar</button>
+                    </form>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/apidocs">API</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/acerca">Acerca</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    </body>
+</html>
